@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Environment
+.env
+.env.local
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ML model cache (large files)
+*.onnx
+*.bin
+*.safetensors
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Next.js frontend
+frontend/.next/
+frontend/node_modules/
+frontend/out/
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml

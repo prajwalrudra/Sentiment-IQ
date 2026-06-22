@@ -1,0 +1,319 @@
+/* ================================================================
+   Analyzer Page Styles
+   ================================================================ */
+
+.analyzerLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+  .analyzerLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Input Panel */
+.inputPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.textareaWrapper {
+  position: relative;
+}
+
+.textareaWrapper textarea {
+  min-height: 240px;
+  font-size: 0.95rem;
+}
+
+.charCount {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.actionBar {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.actionBar .btn {
+  flex-shrink: 0;
+}
+
+.sampleBtns {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.sampleBtn {
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+.sampleBtn:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--border-accent);
+  color: var(--text-primary);
+}
+
+/* Results Panel */
+.resultsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Sentiment Overview Card */
+.overviewCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.overviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.sentimentDisplay {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sentimentCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  position: relative;
+}
+
+.sentimentCircle::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid;
+  opacity: 0.3;
+}
+
+.sentimentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.sentimentLabelLg {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.sentimentMeta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Ratio Bars */
+.ratioBars {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 2px;
+  margin-top: var(--space-md);
+}
+
+.ratioSegment {
+  height: 100%;
+  border-radius: 4px;
+  transition: width var(--transition-slow);
+  min-width: 2px;
+}
+
+.ratioLegend {
+  display: flex;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.ratioItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.ratioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Sentences */
+.sentencesCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.sentencesTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.sentenceItem {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  transition: background var(--transition-fast);
+  animation: fadeInUp 0.3s ease-out;
+}
+.sentenceItem:hover {
+  background: var(--bg-glass);
+}
+
+.sentenceBar {
+  width: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sentenceContent {
+  flex: 1;
+}
+
+.sentenceText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.sentenceMeta {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Emotions Card */
+.emotionsCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.emotionRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 8px 0;
+}
+
+.emotionName {
+  width: 80px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.emotionTrack {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.emotionFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emotionPct {
+  width: 45px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Aspects Card */
+.aspectsCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.aspectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.aspectTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+.aspectTag:hover {
+  transform: scale(1.05);
+}
+
+/* Entities */
+.entitiesCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.entityTag {
+  display: inline-flex;
+  padding: 4px 12px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: var(--text-accent);
+  margin: 0 6px 6px 0;
+}
